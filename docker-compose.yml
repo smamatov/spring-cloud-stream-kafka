@@ -1,0 +1,17 @@
+version: '3.2'
+services:
+  kafka:
+    image: landoop/fast-data-dev:1.1.0
+    depends_on: [dns]
+    dns: [172.19.0.2]
+    environment:
+      - ADV_HOST=kafka.localhost
+      - SAMPLEDATA=0
+    networks:
+      default:
+        aliases: [kafka.localhost]
+    ports:
+      - "2181:2181"
+      - "9092:9092"
+      - "3030:3030"
+      - "8081:8081"
