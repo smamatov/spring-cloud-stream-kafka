@@ -2,8 +2,6 @@ version: '3.2'
 services:
   kafka:
     image: landoop/fast-data-dev:1.1.0
-    depends_on: [dns]
-    dns: [172.19.0.2]
     environment:
       - ADV_HOST=kafka.localhost
       - SAMPLEDATA=0

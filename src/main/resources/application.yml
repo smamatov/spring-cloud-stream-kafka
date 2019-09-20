@@ -1,0 +1,19 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      group-id: demoGroup
+      destination: demoTopic
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: demoGroup
+      destination: demoTopic
+      auto-offset-reset: latest
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+#kafka:
+#  id: demoGroup
+#  topic: demoTopic
+
+
